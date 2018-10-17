@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        h1 {
+            margin: 10px 0;
+            font-family: inherit;
+            font-weight: bold;
+            line-height: 20px;
+            color: inherit;
+            text-rendering: optimizelegibility;
+        }
+        h1 small {
+            font-weight: normal;
+            line-height: 1;
+            color: #999;
+        }
+        h1 {
+            line-height: 40px;
+        }
+        h1 {
+            font-size: 38.5px;
+        }
+        h1 small {
+            font-size: 24.5px;
+        }
+        body {
+            margin-top: 90px;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            margin-left: -480px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding-top: 10px;
+            z-index: 10;
+        }
+        @font-face {
+            font-family: 'fontello';
+            src: url('/static/fontello.woff2') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        .demo-icon
+        {
+            font-family: "fontello";
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+
+        }
+    </style>
+</head>
+<body>
+<div class="container header">
+    <h1>你能在2s内把下面的数字复制出来么</h1>
+
+    <div>
+        {% if success %}
+        <h1><small>Congratulations! You've got it!</small></h1>
+        {% else %}
+        <h1><small class="demo-icon">就是这串数字：<b>{{string}}</b></small></h1>
+        <form action="" method="get">
+            <input name="guess" type="text" size="30">
+            <input type="submit">
+        </form>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>
